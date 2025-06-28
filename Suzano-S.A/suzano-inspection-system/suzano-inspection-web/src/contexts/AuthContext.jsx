@@ -1,5 +1,6 @@
 import { createContext, useContext, useState, useEffect } from 'react'
 
+const API_URL = "http://localhost:8080";
 const AuthContext = createContext()
 
 export const useAuth = () => {
@@ -35,7 +36,7 @@ export const AuthProvider = ({ children }) => {
   const login = async (username, password) => {
     try {
       // Simulate API call - replace with actual API endpoint
-      const response = await fetch('/api/auth/login', {
+      const response = await fetch(`${API_URL}/api/auth/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
